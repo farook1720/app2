@@ -8,6 +8,8 @@ import Students from './Students'
 import NewMenu from './NewMenu'
 import Books from './Books'
 import Nopage from './Nopage'
+import States from './States'
+import TodolistPra from './TodolistPra'
 
 export default function App() {
   return (
@@ -19,6 +21,8 @@ export default function App() {
             <Route path="" element={<Students />} />
             <Route path="cals" element={<Cals />} />
             <Route path="books" element={<Books />} />
+            <Route path="States" element={<States />} />
+            <Route path="TodolistPra" element={<TodolistPra />} />
             <Route path="*" element={<Nopage />} />
           </Route>
         </Routes>

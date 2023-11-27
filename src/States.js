@@ -2,16 +2,16 @@ import React from 'react'
 import { useState } from 'react'
 
 export default function States() {
-const [x, setx] =useState(12)
-const [y, sety] =useState(10)
+  const [x, setx] = useState(12)
+  const [y, sety] = useState(10)
 
-// function handlex(e) {setx(Number(e.target.value))}
+  // function handlex(e) {setx(Number(e.target.value))}
 
   return (
     <div>
-      <h1 style={{color: 'aqua',backgroundColor: 'black'}} >Arthmatic</h1>
-      X : <input type='number' value={x} onChange={(e) => {setx(Number(e.target.value))}}/>
-      Y : <input type='number' value={y} onChange={ (e) => {sety(Number(e.target.value))}}
+      <h1 style={{ color: 'aqua', backgroundColor: 'black' }} >Arthmatic</h1>
+      X : <input type='number' value={x} onChange={(e) => { setx(Number(e.target.value)) }} />
+      Y : <input type='number' value={y} onChange={(e) => { sety(Number(e.target.value)) }}
       />
       <h3>{x} + {y} = {x + y}</h3>
       <h3>{x} - {y} = {x - y}</h3>

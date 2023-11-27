@@ -7,10 +7,12 @@ export default function NewMenu() {
   return (
     <>
       <div>
-        <Button as={Link} to='/' color='blue' size='large'>home</Button>
-        <Button as={Link} to='/cals' color='blue' size='large'>Cals</Button>
-        <Button as={Link} to='/books' color='blue' size='large'>Books</Button>
-        <Button as={Link} to='/myitems' color='blue' size='large'>myitems</Button>
+        <Button color='blue' size='large' as={Link} to='/' >Home</Button>
+        <Button color='blue' size='large' as={Link} to='/cals' >Cals</Button>
+        <Button  as={Link} to='/books' color='blue' size='large'>Books</Button>
+        <Button as={Link} to='/myitems' color='blue' size='large'>Myitems</Button>
+        <Button as={Link} to='/States' color='blue' size='large'>States</Button>
+        <Button as={Link} to='/TodolistPra' color='blue' size='large'>TodolistPra</Button>
       </div>
       <hr />
       <div style={{ padding: 10 }}>
