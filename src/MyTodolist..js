@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Button, Input } from 'semantic-ui-react'
 
-export default function TodolistPra() {
+export default function MyTodolist() {
+
+
   const [text, setText] = useState('')
   const [list, setList] = useState([])
 
@@ -15,20 +17,25 @@ export default function TodolistPra() {
   }
 
 
+
   return (
     <div>
-      Item: <Input type="text" value={text} onChange={handleText} />
-      <Button color='blue' onClick={addItem} >ADD</Button>
+
+      Item:  <Input type='text' value={text} onChange={handleText} />
+      <Button color='blue' onClick={addItem}>ADD</Button>
+
       <hr />
-      <h1>Todolist</h1>
+      <h1>MyTodolist</h1>
+
       <ol>
-        {
-          list.map((item, index) => {
-            return (<li key={index}>{item}</li>)
-          })
+        {list.map((item, index) => {
+          return (<li key={index}>{item}</li>)
+        })
         }
       </ol>
       <hr />
     </div>
+
+
   )
 }

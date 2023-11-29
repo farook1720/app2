@@ -10,6 +10,8 @@ import Books from './Books'
 import Nopage from './Nopage'
 import States from './States'
 import TodolistPra from './TodolistPra'
+import MyTodolist from './MyTodolist.'
+import TodoLocal from './TodoLocal'
 
 export default function App() {
   return (
@@ -23,6 +25,8 @@ export default function App() {
             <Route path="books" element={<Books />} />
             <Route path="States" element={<States />} />
             <Route path="TodolistPra" element={<TodolistPra />} />
+            <Route path="MyTodolist" element={<MyTodolist />} />
+            <Route path="TodoLocal" element={<TodoLocal />} />
             <Route path="*" element={<Nopage />} />
           </Route>
         </Routes>
