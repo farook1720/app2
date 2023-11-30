@@ -1,17 +1,23 @@
 import React, { useState } from 'react'
-import { Button, Item } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 
-export default function TodoLocal() {
+export default function MyTodolocal() {
 
-  let oldDate = []
-  if (localStorage.getItem('myData')) {
+  let oldDate =[]
+  if (localStorage.getItem('myData')){
 
-    oldDate = JSON.parse(localStorage.getItem('myData'))
+    oldDate = JSON.parse(localStorage.getItem ('myData'))
   }
 
   const [text, setText] = useState('')
   const [list, setList] = useState(oldDate)
 
+  function deleteAll() {
+    const newList = []
+    setList(newList)
+    localStorage.setItem('myData', JSON.stringify(newList))
+
+  }
   function addItem(e) {
     e.preventDefault()
     if (text === '') return
@@ -21,34 +27,30 @@ export default function TodoLocal() {
     setText('')
 
 
-  }
 
-  function deleteAll() {
-
-    const newList = []
-    setList(newList)
-    localStorage.setItem('myData', JSON.stringify(newList))
   }
   function deleteOne(index) {
     let newList = [...list]
-    // console.log(index);
     newList.splice(index, 1)
     setList(newList)
     localStorage.setItem('myData', JSON.stringify(newList))
+
+
+
   }
+
 
   return (
     <div>
 
-      <form onSubmit={addItem}>
-        Item:  <input type='text' value={text} onChange={(e) => { setText(e.target.value) }} />
-        <Button color='green'>ADD</Button>
-
+      <form onSubmit={addItem} >
+        Item:
+        <input type='text' value={text} onChange={(e) => { setText(e.target.value) }} />
+        <Button color='green' >ADD</Button>
       </form>
       <Button color='red' onClick={deleteAll} >DeleteAll</Button>
-
       {list.map((item, index) => {
-        return (<li key={index}>{item} <button onClick={() => deleteOne(index)}>x</button> </li>)
+        return (<li key={index} >{item}<button onClick={() => deleteOne(index)} >X</button></li>)
       })}
     </div>
   )

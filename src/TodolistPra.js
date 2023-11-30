@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import { Button, Input } from 'semantic-ui-react'
 
 export default function TodolistPra() {
+
   const [text, setText] = useState('')
   const [list, setList] = useState([])
 
-  function handleText(e) { setText(e.target.value) }
+  function handleText(e) { 
+    setText(e.target.value) 
+  }
 
   function addItem() {
     if (text === '') return
